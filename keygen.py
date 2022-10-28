@@ -32,5 +32,7 @@ file1=open("Key.txt","w")
 file1.write(key2)
 file1.close()
 
-
+file1=open("Message.txt","w")
+file1.writelines(message)
+file1.close()
 

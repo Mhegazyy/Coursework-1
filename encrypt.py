@@ -1,5 +1,4 @@
 import string
-message = input("Enter Message: \n")
 alpha = list(string.ascii_letters)
 
 file1 = open("Key.txt","r+")
@@ -19,5 +18,3 @@ def encrypt(plaintext,key):
             i += 1 
             enc += alpha[x]
     return enc
-
-encr = encrypt(message,key1)
