@@ -1,7 +1,10 @@
 import string
 
+# This is the variable that will hold the list of the alphabet
 alpha = list(string.ascii_letters)
 
+
+# This is the function to decrypt the plaintext
 def decrypt(message,key):
     dec = ''
     i = 0
@@ -13,9 +16,5 @@ def decrypt(message,key):
             i += 1
             dec += alpha[x]
     return dec
-
-decr = decrypt("llg xikfhr gxkmcx","SECRETTHEGERMANAT")
-
-print(decr)
 
 
