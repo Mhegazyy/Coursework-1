@@ -1,8 +1,11 @@
+from ast import Or
 import string
 
 # This is the variable that will hold the list of the alphabet
-alpha = list(string.ascii_letters)
-
+alphau = list(string.ascii_uppercase)
+alphal = list(string.ascii_lowercase)
+punctuation=list(string.punctuation)
+#alpha.extend(punctuation)
 
 # This is the function to decrypt the plaintext
 def decrypt(message,key):
@@ -11,10 +14,19 @@ def decrypt(message,key):
     for letter in message:
         if letter == ' ':
             dec += ' '
-        else:
-            x = (alpha.index(letter)-alpha.index(key[i])+26)%26
+        elif letter == '\n':
+            dec += '\n'
+        elif letter not in alphau or alphal:
+            dec += letter
+            continue
+        elif letter in alphal:
+            x = (alphal.index(letter)-alphal.index(key[i])+26)%26
             i += 1
-            dec += alpha[x]
+            dec += alphal[x]
+        else:
+            x = (alphau.index(letter)-alphau.index(key[i])+26)%26
+            i += 1
+            dec += alphau[x]
     return dec
 
 

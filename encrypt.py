@@ -1,6 +1,9 @@
 import string
 # This is the variable that will hold the list of the alphabet
-alpha = list(string.ascii_letters)
+alphau = list(string.ascii_uppercase)
+alphal = list(string.ascii_lowercase)
+punctuation=list(string.punctuation)
+#alpha.extend(punctuation)
 
 # This segment is to grab the key from the txt file
 file1 = open("Key.txt","r+")
@@ -15,8 +18,17 @@ def encrypt(plaintext,key):
     for letter in plaintext:
         if letter == ' ':
             enc += ' '
-        else:
-            x = (alpha.index(letter)+alpha.index(key[i]))%26
+        elif letter =='\n':
+            enc += '\n'
+        elif letter not in alphal or alphau:
+            enc += letter
+            continue
+        elif letter in alphau:
+            x = (alphau.index(letter)+alphau.index(key[i]))%26
             i += 1 
-            enc += alpha[x]
+            enc += alphau[x]
+        else:
+            x = (alphal.index(letter)+alphal.index(key[i]))%26
+            i += 1 
+            enc += alphal[x]
     return enc

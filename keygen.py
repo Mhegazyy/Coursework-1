@@ -4,7 +4,7 @@ import random
 def get_message():
     message = ""
     if message == "":
-        message = input("Please Enter Your Message: \n")
+        message = ("Please Enter Your Message: \n")
         return message 
 
 # This function is to create a random key string using upper and lower case letters
@@ -25,10 +25,14 @@ def keygen(text,k):
             i += 1
     return k
 
+file2=open("Message.txt","r+")
+message1=file2.read()
+file2.close()
+
 # Calling the functions and storing them in variables
-key=get_key(4)
+key=get_key(5)
 message = get_message()
-key2 = keygen(message,key)
+key2 = keygen(message1,key)
 
 # This segment will create a txt file and store the generated full key in it for the driver code
 file1=open("Key.txt","w")
@@ -36,7 +40,7 @@ file1.write(key2)
 file1.close()
 
 # This segment will create a txt file and store the plaintext in it for the driver code
-file1=open("Message.txt","w")
-file1.writelines(message)
-file1.close()
+#file1=open("Message.txt","w")
+#file1.writelines(message)
+#file1.close()
 
