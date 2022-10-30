@@ -14,7 +14,7 @@ def get_key(length):
 
 # This function will concatenate the key and message in order to generate the full key for the cipher
 def keygen(text,k):
-    i = 0
+    i=0
     while True:
         if len(k) == len(text):
             break
@@ -29,8 +29,14 @@ file2=open("Message.txt","r+")
 message1=file2.read()
 file2.close()
 
+# Deciding the length of the key
+length = message1.count(' ')
+if length < 4 :
+    length = 4
+
 # Calling the functions and storing them in variables
-key=get_key(5)
+print(length)
+key=get_key(length)
 message = get_message()
 key2 = keygen(message1,key)
 

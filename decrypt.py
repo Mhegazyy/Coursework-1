@@ -8,25 +8,38 @@ punctuation=list(string.punctuation)
 #alpha.extend(punctuation)
 
 # This is the function to decrypt the plaintext
-def decrypt(message,key):
+def decrypt(plaintext,key):
     dec = ''
     i = 0
-    for letter in message:
-        if letter == ' ':
-            dec += ' '
-        elif letter == '\n':
-            dec += '\n'
-        elif letter not in alphau or alphal:
-            dec += letter
-            continue
+    for letter in plaintext:
+
+        if letter in alphau:
+            if key[i] in alphau:
+                x = (alphau.index(letter)-alphau.index(key[i])+26)%26
+                i += 1 
+                dec += alphau[x]
+                
+            elif key[i] in alphal:
+                x = (alphau.index(letter)-alphal.index(key[i])+26)%26
+                i += 1 
+                dec += alphau[x]
+            else:
+                dec += letter
+
         elif letter in alphal:
-            x = (alphal.index(letter)-alphal.index(key[i])+26)%26
-            i += 1
-            dec += alphal[x]
+            if key[i] in alphal:
+                x = (alphal.index(letter)-alphal.index(key[i])+26)%26
+                i += 1 
+                dec += alphal[x]
+            elif key[i] in alphau:
+                x = (alphal.index(letter)-alphau.index(key[i])+26)%26
+                i += 1 
+                dec += alphal[x]
+            else:
+                dec += letter
         else:
-            x = (alphau.index(letter)-alphau.index(key[i])+26)%26
-            i += 1
-            dec += alphau[x]
+            dec += letter
+        
     return dec
 
 
