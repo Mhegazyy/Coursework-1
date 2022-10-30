@@ -1,7 +1,7 @@
 import string
 import random
 from os.path import exists
-# This function will ask the user to input the message meant for encryption
+# These functions create the files necessary to run the keygen
 if exists('Message.txt') == False:
     file1=open("Message.txt",'w')
     file1.write('')

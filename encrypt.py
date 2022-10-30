@@ -3,7 +3,11 @@ import string
 alphau = list(string.ascii_uppercase)
 alphal = list(string.ascii_lowercase)
 punctuation=list(string.punctuation)
-#alpha.extend(punctuation)
+digits  = list(string.digits)
+alphal.extend(punctuation)
+alphau.extend(punctuation)
+alphal.extend(digits)
+alphau.extend(digits)
 
 # This segment is to grab the key from the txt file
 file1 = open("Key.txt","r+")
@@ -19,12 +23,12 @@ def encrypt(plaintext,key):
 
         if letter in alphau:
             if key[i] in alphau:
-                x = (alphau.index(letter)+alphau.index(key[i]))%26
+                x = (alphau.index(letter)+alphau.index(key[i]))%68
                 i += 1 
                 enc += alphau[x]
                 
             elif key[i] in alphal:
-                x = (alphau.index(letter)+alphal.index(key[i]))%26
+                x = (alphau.index(letter)+alphal.index(key[i]))%68
                 i += 1 
                 enc += alphau[x]
             else:
