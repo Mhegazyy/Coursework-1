@@ -1,11 +1,9 @@
-from ast import Or
 import string
 
 # This is the variable that will hold the list of the alphabet
 alphau = list(string.ascii_uppercase)
 alphal = list(string.ascii_lowercase)
-punctuation=list(string.punctuation)
-#alpha.extend(punctuation)
+
 
 # This is the function to decrypt the plaintext
 def decrypt(plaintext,key):

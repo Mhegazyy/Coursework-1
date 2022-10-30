@@ -1,6 +1,7 @@
+import keygen
 import encrypt
 import decrypt
-import keygen
+
 
 keygen.key2
 
