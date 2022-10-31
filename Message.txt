@@ -1,2 +1,1 @@
-Hello, My Name Is Mahmoud I am 20 This is a code!
-Thanks!
+This is a message!

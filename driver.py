@@ -1,10 +1,9 @@
+# Importing the code files of the program
 import keygen
 import encrypt
 import decrypt
 
-
-keygen.key2
-
+#
 file = open("Key.txt","r+")
 key = file.read()
 file.close()

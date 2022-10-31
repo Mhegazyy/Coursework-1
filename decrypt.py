@@ -1,6 +1,6 @@
 import string
 
-# This is the variable that will hold the list of the alphabet
+# These variables that will hold the lists of the characters
 alphau = list(string.ascii_uppercase)
 alphal = list(string.ascii_lowercase)
 punctuation=list(string.punctuation)
@@ -10,7 +10,7 @@ alphau.extend(punctuation)
 alphal.extend(digits)
 alphau.extend(digits)
 
-# This is the function to decrypt the plaintext
+# This is the function to decrypt the message
 def decrypt(plaintext,key):
     dec = ''
     i = 0
