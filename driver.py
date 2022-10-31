@@ -3,7 +3,7 @@ import keygen
 import encrypt
 import decrypt
 
-#
+#Opening the key file
 file = open("Key.txt","r+")
 key = file.read()
 file.close()
