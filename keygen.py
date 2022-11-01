@@ -1,3 +1,4 @@
+import math
 import string
 import random
 from os.path import exists
@@ -40,8 +41,11 @@ if message1 == '':
 
 # Deciding the length of the key
 length = message1.count(' ')
+l = len(message1) - length
 if length < 4 :
     length = 4
+length+=(l/2)
+length = int(length)
 
 # Calling the functions and storing them in variables
 key=get_key(length)
