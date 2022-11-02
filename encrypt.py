@@ -17,7 +17,7 @@ file1.close()
 
 # This is the encryption function
 def encrypt(plaintext,key):
-    enc = ''
+    enc = []
     i = 0
     for letter in plaintext:
 
@@ -25,29 +25,66 @@ def encrypt(plaintext,key):
             if key[i] in alphau:
                 x = (alphau.index(letter)+alphau.index(key[i]))%68
                 i += 1 
-                enc += alphau[x]
+                enc.append(alphau[x])
                 
             elif key[i] in alphal:
                 x = (alphau.index(letter)+alphal.index(key[i]))%68
                 i += 1 
-                enc += alphau[x]
+                enc.append(alphau[x])
             else:
-                enc+=letter
+                enc.append(letter)
                 
         elif letter in alphal:
             if key[i] in alphal:
                 x = (alphal.index(letter)+alphal.index(key[i]))%26
                 i += 1 
-                enc += alphal[x]
+                enc.append(alphal[x])
             elif key[i] in alphau:
                 x = (alphal.index(letter)+alphau.index(key[i]))%26
                 i += 1 
-                enc += alphal[x]
+                enc.append(alphal[x])
             else:
-                enc+=letter
+                enc.append(letter)
         else:
-            enc += letter
+            enc.append(letter)
         
-    return enc
+    return ''.join(enc)
+
+
+
+
+# def encrypt(plaintext,key):
+#     enc = ''
+#     i = 0
+#     for letter in plaintext:
+
+#         if letter in alphau:
+#             if key[i] in alphau:
+#                 x = (alphau.index(letter)+alphau.index(key[i]))%68
+#                 i += 1 
+#                 enc += alphau[x]
+                
+#             elif key[i] in alphal:
+#                 x = (alphau.index(letter)+alphal.index(key[i]))%68
+#                 i += 1 
+#                 enc += alphau[x]
+#             else:
+#                 enc+=letter
+                
+#         elif letter in alphal:
+#             if key[i] in alphal:
+#                 x = (alphal.index(letter)+alphal.index(key[i]))%26
+#                 i += 1 
+#                 enc += alphal[x]
+#             elif key[i] in alphau:
+#                 x = (alphal.index(letter)+alphau.index(key[i]))%26
+#                 i += 1 
+#                 enc += alphal[x]
+#             else:
+#                 enc+=letter
+#         else:
+#             enc += letter
+        
+#     return enc
 
 
