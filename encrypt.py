@@ -53,38 +53,5 @@ def encrypt(plaintext,key):
 
 
 
-# def encrypt(plaintext,key):
-#     enc = ''
-#     i = 0
-#     for letter in plaintext:
-
-#         if letter in alphau:
-#             if key[i] in alphau:
-#                 x = (alphau.index(letter)+alphau.index(key[i]))%68
-#                 i += 1 
-#                 enc += alphau[x]
-                
-#             elif key[i] in alphal:
-#                 x = (alphau.index(letter)+alphal.index(key[i]))%68
-#                 i += 1 
-#                 enc += alphau[x]
-#             else:
-#                 enc+=letter
-                
-#         elif letter in alphal:
-#             if key[i] in alphal:
-#                 x = (alphal.index(letter)+alphal.index(key[i]))%26
-#                 i += 1 
-#                 enc += alphal[x]
-#             elif key[i] in alphau:
-#                 x = (alphal.index(letter)+alphau.index(key[i]))%26
-#                 i += 1 
-#                 enc += alphal[x]
-#             else:
-#                 enc+=letter
-#         else:
-#             enc += letter
-        
-#     return enc
 
 
